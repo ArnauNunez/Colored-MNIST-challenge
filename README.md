@@ -63,8 +63,3 @@ Clone the repository, open the `Colored_MNIST_Challenge.ipynb` notebook in Jupyt
 git clone [https://github.com/your-username/colored-mnist-challenge.git](https://github.com/your-username/colored-mnist-challenge.git)
 cd colored-mnist-challenge
 ```
-
----
-
-## Author
-Developed as part of a Machine Learning portfolio demonstrating robust computer vision pipelines and critical model evaluation.
