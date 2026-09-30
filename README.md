@@ -27,17 +27,7 @@ While the model achieves exceptional performance (>99%) on clean or baseline dat
 
 ---
 
-## Repository Structure
-```text
-├── Colored_MNIST_Challenge.ipynb  # Complete Jupyter Notebook (Code + Markdown + Outputs)
-├── model_weights.pth              # Serialized model weights (state_dict)
-├── predictions.npy                # Exported test predictions for evaluation tracking
-└── README.md                      # Project documentation
-```
-
----
-
-### 1. Requirements & Dependencies
+### Requirements & Dependencies
 Ensure Python 3.9+ is installed. Run the following command to install required libraries:
 ```bash
 pip install torch torchvision torchinfo matplotlib scikit-learn tqdm gdown
