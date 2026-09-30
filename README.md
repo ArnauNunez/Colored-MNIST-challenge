@@ -1,21 +1,70 @@
-# Colored MNIST Project
+# Colored MNIST Challenge: Robust CNN & Generalization Analysis
 
-This repository contains a PyTorch pipeline for loading, preprocessing, and training models on a **Colored MNIST dataset**.
+## Overview
+This repository contains an end-to-end deep learning project for the **Colored MNIST Challenge**. It implements a custom Convolutional Neural Network (CNN) in **PyTorch** designed to classify hand-written digits under varying levels of environmental noise and data corruption (Easy, Medium, and Hard distributions). 
 
-## Features
-- Custom `Dataset` class for Colored MNIST
-- Preprocessing: resize, grayscale, contrast, brightness, binarization
-- Training/validation split with `DataLoader`
-- Example ML workflow with digit recognition
+The project demonstrates full-cycle machine learning engineering, including robust data pipeline design, modular architecture implementation, secure model weight serialization, and a critical analysis of model generalization versus adversarial degradation.
 
-## Requirements
-- Python 3.9+
-- PyTorch
-- torchvision
-- matplotlib
-- scikit-learn
-- tqdm
+---
 
-Install dependencies:
+## Key Results
+
+| Dataset Distribution | Accuracy | Performance Status |
+| :--- | :---: | :--- |
+| **Validation / Easy Set** | **~99.38%** | State-of-the-art convergence |
+| **Medium Set** | *Evaluated* | Moderate robustness |
+| **Hard Set** | **~26.00%** | Adversarial generalization gap |
+
+---
+
+## Architecture & Technical Stack
+* **Framework:** PyTorch, torchvision, Torchinfo
+* **Model Architecture:** Custom Deep CNN featuring:
+  * 7 Convolutional blocks with alternating strides and filter sizes ($32 \to 64 \to 128$ channels).
+  * **Batch Normalization** after convolutional layers to stabilize internal covariate shift.
+  * **Dropout ($p = 0.4$)** integrated for active regularization and prevention of overfitting.
+* **Preprocessing Pipeline:** Automated ingestion, resizing, grayscale conversion, contrast/brightness adjustments, and strict threshold binarization (`> 0.1`).
+* **Security & Best Practices:** Strict usage of `.state_dict()` serialization (`weights_only=True`) to prevent unpickling vulnerabilities.
+
+---
+
+## Critical Insights & Generalization Gap Analysis
+While the model achieves exceptional performance (>99%) on clean or baseline data (`Easy` set), performance drops significantly on the `Hard` dataset. This case study demonstrates critical ML competencies:
+1. **Feature Loss via Hard Binarization:** The strict thresholding effective on clean images strips away structural details of low-intensity digits embedded in complex backgrounds.
+2. **Lack of Spatial Invariance:** The model was trained on rigidly aligned objects, making its feature maps highly sensitive to geometric shifts, affine transformations, or rotations present in adversarial sets.
+
+### Proposed Improvements (Next Steps)
+* **On-the-fly Data Augmentation:** Implement `transforms.RandomRotation` and `transforms.RandomAffine` inside the training pipeline to enforce spatial invariance.
+* **Dynamic Normalization:** Remove rigid binarization with adaptive histogram equalization (CLAHE) or standard tensor normalization to preserve weak structural patterns.
+
+---
+
+## Repository Structure
+```text
+├── Colored_MNIST_Challenge.ipynb  # Complete Jupyter Notebook (Code + Markdown + Outputs)
+├── model_weights.pth              # Serialized model weights (state_dict)
+├── predictions.npy                # Exported test predictions for evaluation tracking
+└── README.md                      # Project documentation
+```
+
+---
+
+## Quick Start
+
+### 1. Requirements & Dependencies
+Ensure Python 3.9+ is installed. Run the following command to install required libraries:
 ```bash
-pip install torch torchvision torchinfo matplotlib scikit-learn tqdm idx2numpy
+pip install torch torchvision torchinfo matplotlib scikit-learn tqdm gdown
+```
+
+### 2. Execution
+Clone the repository, open the `Colored_MNIST_Challenge.ipynb` notebook in Jupyter or Google Colab, and run all cells sequentially to reproduce training logs, evaluations, and visualizations:
+```bash
+git clone [https://github.com/your-username/colored-mnist-challenge.git](https://github.com/your-username/colored-mnist-challenge.git)
+cd colored-mnist-challenge
+```
+
+---
+
+## Author
+Developed as part of a Machine Learning portfolio demonstrating robust computer vision pipelines and critical model evaluation.
