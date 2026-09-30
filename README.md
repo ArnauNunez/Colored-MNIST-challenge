@@ -18,4 +18,4 @@ This repository contains a PyTorch pipeline for loading, preprocessing, and trai
 
 Install dependencies:
 ```bash
-pip install torch torchvision torchinfo matplotlib scikit-learn tqdm
+pip install torch torchvision torchinfo matplotlib scikit-learn tqdm idx2numpy
