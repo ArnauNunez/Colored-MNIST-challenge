@@ -1,9 +1,7 @@
 # Colored MNIST Challenge: Robust CNN & Generalization Analysis
 
 ## Overview
-This repository contains an end-to-end deep learning project for the **Colored MNIST Challenge**. It implements a custom Convolutional Neural Network (CNN) in **PyTorch** designed to classify hand-written digits under varying levels of environmental noise and data corruption (Easy, Medium, and Hard distributions). 
-
-The project demonstrates full-cycle machine learning engineering, including robust data pipeline design, modular architecture implementation, secure model weight serialization, and a critical analysis of model generalization versus adversarial degradation.
+This repository contains an end-to-end deep learning project for the **Colored MNIST Challenge**. It implements a custom Convolutional Neural Network (CNN) in **PyTorch** designed to classify hand-written digits under varying levels of environmental noise and data corruption.
 
 ---
 
