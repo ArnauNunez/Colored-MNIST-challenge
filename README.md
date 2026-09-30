@@ -7,16 +7,6 @@ The project demonstrates full-cycle machine learning engineering, including robu
 
 ---
 
-## Key Results
-
-| Dataset Distribution | Accuracy | Performance Status |
-| :--- | :---: | :--- |
-| **Validation / Easy Set** | **~99.38%** | State-of-the-art convergence |
-| **Medium Set** | *Evaluated* | Moderate robustness |
-| **Hard Set** | **~26.00%** | Adversarial generalization gap |
-
----
-
 ## Architecture & Technical Stack
 * **Framework:** PyTorch, torchvision, Torchinfo
 * **Model Architecture:** Custom Deep CNN featuring:
