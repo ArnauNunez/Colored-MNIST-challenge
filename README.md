@@ -49,17 +49,7 @@ While the model achieves exceptional performance (>99%) on clean or baseline dat
 
 ---
 
-## Quick Start
-
 ### 1. Requirements & Dependencies
 Ensure Python 3.9+ is installed. Run the following command to install required libraries:
 ```bash
 pip install torch torchvision torchinfo matplotlib scikit-learn tqdm gdown
-```
-
-### 2. Execution
-Clone the repository, open the `Colored_MNIST_Challenge.ipynb` notebook in Jupyter or Google Colab, and run all cells sequentially to reproduce training logs, evaluations, and visualizations:
-```bash
-git clone [https://github.com/your-username/colored-mnist-challenge.git](https://github.com/your-username/colored-mnist-challenge.git)
-cd colored-mnist-challenge
-```
