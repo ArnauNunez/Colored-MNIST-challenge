@@ -12,7 +12,7 @@ This repository contains an end-to-end deep learning project for the **Colored M
   * **Batch Normalization** after convolutional layers to stabilize internal covariate shift.
   * **Dropout ($p = 0.4$)** integrated for active regularization and prevention of overfitting.
 * **Preprocessing Pipeline:** Automated ingestion, resizing, grayscale conversion, contrast/brightness adjustments, and strict threshold binarization (`> 0.1`).
-* **Security & Best Practices:** Strict usage of `.state_dict()` serialization (`weights_only=True`) to prevent unpickling vulnerabilities.
+* **Security & Best Practices:** Strict usage of `.state_dict()` serialization to prevent unpickling vulnerabilities.
 
 ---
 
