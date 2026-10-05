@@ -31,3 +31,10 @@ While the model achieves exceptional performance (>99%) on clean or baseline dat
 Ensure Python 3.9+ is installed. Run the following command to install required libraries:
 ```bash
 pip install torch torchvision torchinfo matplotlib scikit-learn tqdm gdown
+```
+
+---
+
+## License
+
+All Rights Reserved. This project is publicly visible but may not be copied, modified, or redistributed.
